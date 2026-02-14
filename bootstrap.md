@@ -66,8 +66,40 @@ with no shared dependencies.
 **Cost awareness:**
 - N agents ≈ N× token cost (each loads context independently)
 - Sweet spot: 2 agents max for truly separate repos, 1 agent for everything in a single repo
-- Foreman is useful for planning/decomposition but expensive (~50K tokens for task creation).
-  Skip it if the plan is detailed enough for developers to self-direct.
+
+---
+
+## Custom Subagents
+
+This repo includes custom agent definitions in `agents/`. To install them, copy the
+files to `~/.claude/agents/`:
+
+```bash
+cp agents/*.md ~/.claude/agents/
+```
+
+Each agent has a frontmatter block (name, description, model, color, tools, memory)
+and a markdown body that serves as the agent's system prompt. Claude Code automatically
+picks them up from `~/.claude/agents/` and makes them available as `subagent_type`
+values in the Task tool.
+
+**Included agents:**
+
+- **developer** — senior dev for writing, modifying, debugging, reviewing code in any
+  language. Bootstraps via `DEVSTUFF.md` for project knowledge persistence.
+- **lord-devops** — infrastructure engineer for Terraform, Docker, CI/CD, deployments.
+  Bootstraps via `INFRA_THINGS.md`. Follows plan → staging → production gates.
+- **security-auditor** — read-only security reviewer. Produces CVSS-rated findings with
+  CWE references, attack scenarios, and remediation plans. Never modifies code.
+- **frontend-craftsman** — UI/UX specialist. Bootstraps via `UISTUFF.md`. Mobile-first,
+  accessibility-aware, progressive enhancement.
+
+**Dispatch pattern:** developer builds it → security-auditor reviews it → ship it.
+Use lord-devops for infra work. Use frontend-craftsman for UI work.
+
+**Knowledge persistence:** Each agent maintains a project-specific knowledge file
+(`DEVSTUFF.md`, `INFRA_THINGS.md`, `UISTUFF.md`) that accumulates patterns and decisions
+across sessions. Agents read these on bootstrap and update them when done.
 
 ---
 
