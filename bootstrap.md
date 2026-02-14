@@ -103,6 +103,37 @@ across sessions. Agents read these on bootstrap and update them when done.
 
 ---
 
+## Subagent Monitoring (tmux)
+
+If you run inside tmux, you can launch visible subagents in panes below the primary
+session so the user can watch their progress in real-time:
+
+```bash
+tools/spawn-agent.sh <agent-type> "<prompt>" [model] [cwd]
+```
+
+This runs `claude --print --output-format stream-json` piped through a formatter script
+(`tools/agent-viewer.sh`) that renders colored, structured output:
+- Tool calls shown as one-liner summaries (e.g., `◆ Read src/main.go`)
+- Agent text rendered directly
+- Cost and duration in a footer when complete
+
+**Layout:** First agent splits below the primary pane. Additional agents tile
+side-by-side in the bottom row. Primary keeps focus (`-d` flag).
+
+**Key details:**
+- Uses `env -u CLAUDECODE` to allow nested Claude sessions
+- Uses `--dangerously-skip-permissions` for autonomous operation
+- Prompts are written to temp files to avoid shell escaping issues
+- Agent pane tracking in `/tmp/tmux-agents-*` handles the split logic
+
+This is for **monitoring only** — use the `Task` tool when results need to flow back
+to the primary session. The two approaches complement each other:
+- `Task` tool: invisible, results returned to primary
+- `spawn-agent.sh`: visible in tmux, user can watch, no results returned
+
+---
+
 ## Session Lifecycle
 
 ### Session Start
