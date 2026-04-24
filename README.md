@@ -1,40 +1,58 @@
-# Claude Code Agent Bootstrap
+# ohmybootstrap
 
-A portable prompt you can paste into any new Claude Code session to bootstrap it with a battle-tested agent workflow system.
-
-## What's Included
-
-`bootstrap.md` contains a self-contained prompt that teaches Claude Code to:
-
-- **Director mindset** — delegate to subagents, keep the main session for steering
-- **Task management** — native `TaskCreate`/`TaskList`/`TaskUpdate` with dependency tracking and cross-session persistence via `tasks.jsonl`
-- **Subagent strategy** — when to parallelize (and when not to), cost awareness
-- **Session rituals** — restore tasks on start, export + commit + push on end
-- **Nested CLAUDE.md architecture** — lean root config with domain-specific subdirectory files
-- **Memory patterns** — what to save, what to skip, how to organize topic files
-
-`agents/` contains four custom subagent definitions:
-
-- **developer** — code writing, debugging, reviewing (any language/framework)
-- **lord-devops** — infrastructure, Docker, Terraform, CI/CD, deployments
-- **security-auditor** — read-only security review with CVSS-rated findings
-- **frontend-craftsman** — UI/UX, components, styling, accessibility
+An opinionated Claude Code setup kit distilled from a mature private monorepo's agent workflow. Point a Claude Code session at this repo and ask it to adapt your project.
 
 ## Usage
 
-### Bootstrap a project
-1. Open a Claude Code session in your project
-2. Paste the contents of `bootstrap.md` as your first message
-3. Claude will explore your repo, then generate a `CLAUDE.md` and nested configs adapted to your project
+1. Open a Claude Code session in your project.
+2. Clone this repo somewhere the session can reach: `git clone https://github.com/ijiti/ohmybootstrap ~/ohmybootstrap`.
+3. Tell the session: **"Read `~/ohmybootstrap/APPLY.md` and adapt this project to match. Ask me before each change."**
+4. Approve each step as the agent walks through it.
 
-### Install custom agents
-```bash
-mkdir -p ~/.claude/agents
-cp agents/*.md ~/.claude/agents/
+## What gets installed
+
+- **`CLAUDE.md`** at your project root — the operating contract. Structured as ranked directive groups (Security / Work Discipline / Collaboration / Context & Memory) with a conflict-resolution table. Filled in to match your project's stack, conventions, and deployment story.
+- **7 agents** at `~/.claude/agents/` — `developer`, `frontend-craftsman`, `devops`, `security-auditor`, `code-reviewer`, `in-depth-code-reviewer`, `plan-reviewer`.
+- **4 skills** at `.claude/skills/` (or `~/.claude/skills/` on request) — `session-start`, `session-completion`, `pr-and-review`, `tidy`.
+- **`failure-patterns.md`** at your project root — catalog of hard-won lessons to pattern-match against.
+- **Scaffolds** — empty `tasks.jsonl`, optional nested CLAUDE.md files, auto-memory directory.
+
+## What's *not* here
+
+No hostnames, no domain names, no fleet-specific tooling, no proprietary tool paths. Patterns are generic. The specifics of your project are filled in by the APPLY agent based on what it finds in your repo.
+
+## Recommended dependency
+
+The kit's CLAUDE.md template and skill flow reference the [superpowers](https://github.com/anthropics/claude-plugins-official) plugin for the heavy process skills (brainstorming → writing-plans → executing-plans, TDD, debugging, verification, worktrees, parallel-agent dispatch). References degrade gracefully if superpowers is not installed — but the kit is more useful with it.
+
+## Layout
+
+```
+APPLY.md                          ← agent entry point
+README.md                         ← this file
+claude/
+  CLAUDE.md.template              ← the directive skeleton
+  MEMORY.md.template              ← auto-memory index scaffold
+  agents/                         ← 7 agent definitions
+  skills/                         ← 4 skill definitions
+  failure-patterns.md             ← lessons catalog
+reference/                        ← conceptual docs the APPLY agent links into your CLAUDE.md
+  directive-groups.md
+  memory-system.md
+  subagent-dispatch.md
+  worktrees-and-parallelism.md
+  verification-discipline.md
+  command-tiers.md
+  brainstorm-plan-execute.md
+examples/
+  CLAUDE.md                       ← filled-in example for a hypothetical Python web app
+  tasks.jsonl                     ← empty scaffold
 ```
 
-The agents are immediately available in all Claude Code sessions as subagent types.
+## Customize
+
+After the APPLY agent's initial pass, everything it wrote is yours to edit, extend, or remove. Nothing in this kit is load-bearing — it's a starting point.
 
 ## Origin
 
-Distilled from a private infrastructure-as-code monorepo's agent workflow, stripped of all project-specific details. The patterns have been refined across dozens of sessions involving multi-agent coordination, CI/CD pipelines, and cross-repo development.
+Distilled from a private infrastructure-as-code monorepo's agent workflow, stripped of project-specific details. The patterns have been refined across many sessions of multi-agent coordination, CI/CD, infra ops, and cross-repo development.
