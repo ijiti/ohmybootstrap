@@ -1,0 +1,135 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 1240" font-family="ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif">
+  <defs>
+    <marker id="arrowDark" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#0f172a"/>
+    </marker>
+    <marker id="arrowSlate" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#94a3b8"/>
+    </marker>
+  </defs>
+
+  <rect width="1100" height="1240" fill="#ffffff"/>
+
+  <!-- ============ TITLE ============ -->
+  <text x="550" y="44" text-anchor="middle" font-size="28" font-weight="600" fill="#0f172a">ohmybootstrap workflow</text>
+  <text x="550" y="70" text-anchor="middle" font-size="14" fill="#64748b">Five phases (white) · <tspan font-weight="600" fill="#b45309">two cross-model review checkpoints (amber)</tspan> · persistent state across sessions</text>
+
+  <!-- ============ ALWAYS-ON CONSTITUTION (top rail) ============ -->
+  <rect x="40" y="100" width="1020" height="78" rx="10" fill="#0f172a"/>
+  <text x="60" y="124" font-size="10" font-weight="700" fill="#fbbf24" letter-spacing="2">ALWAYS-ON  ·  THE OPERATING CONTRACT</text>
+  <text x="60" y="148" font-size="14" font-weight="600" fill="#ffffff">CLAUDE.md</text>
+  <text x="155" y="148" font-size="13" fill="#cbd5e1">— ranked directives:</text>
+  <text x="290" y="148" font-size="13" font-weight="700" fill="#60a5fa">Security</text>
+  <text x="357" y="148" font-size="13" fill="#94a3b8"> &gt; </text>
+  <text x="378" y="148" font-size="13" font-weight="700" fill="#34d399">Work</text>
+  <text x="425" y="148" font-size="13" fill="#94a3b8"> &gt; </text>
+  <text x="446" y="148" font-size="13" font-weight="700" fill="#fbbf24">Collaboration</text>
+  <text x="558" y="148" font-size="13" fill="#94a3b8"> &gt; </text>
+  <text x="579" y="148" font-size="13" font-weight="700" fill="#f472b6">Context</text>
+  <text x="641" y="148" font-size="13" fill="#cbd5e1">+ a conflict-resolution table</text>
+  <text x="60" y="168" font-size="11" fill="#94a3b8" font-style="italic">verification trumps completion claim  ·  diagnosis trumps retry  ·  security observations can expand scope</text>
+
+  <!-- ============ PHASE 1: DESIGN ============ -->
+  <rect x="280" y="208" width="540" height="76" rx="10" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+  <circle cx="304" cy="232" r="14" fill="#0f172a"/>
+  <text x="304" y="237" text-anchor="middle" font-size="13" font-weight="700" fill="#ffffff">1</text>
+  <text x="328" y="232" font-size="14" font-weight="700" fill="#0f172a">Design</text>
+  <text x="328" y="252" font-size="11" fill="#475569">skill: <tspan font-weight="600" fill="#0f172a">superpowers:brainstorming</tspan> — questions, options, design</text>
+  <text x="328" y="270" font-size="11" fill="#475569">→ spec at <tspan font-family="ui-monospace, monospace" fill="#0f172a">docs/superpowers/specs/YYYY-MM-DD-&lt;topic&gt;-design.md</tspan></text>
+
+  <line x1="550" y1="289" x2="550" y2="313" stroke="#0f172a" stroke-width="2" marker-end="url(#arrowDark)"/>
+
+  <!-- ============ PHASE 2: PLAN ============ -->
+  <rect x="280" y="318" width="540" height="76" rx="10" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+  <circle cx="304" cy="342" r="14" fill="#0f172a"/>
+  <text x="304" y="347" text-anchor="middle" font-size="13" font-weight="700" fill="#ffffff">2</text>
+  <text x="328" y="342" font-size="14" font-weight="700" fill="#0f172a">Plan</text>
+  <text x="328" y="362" font-size="11" fill="#475569">skill: <tspan font-weight="600" fill="#0f172a">superpowers:writing-plans</tspan> — task-by-task, TDD-shaped, no placeholders</text>
+  <text x="328" y="380" font-size="11" fill="#475569">→ plan at <tspan font-family="ui-monospace, monospace" fill="#0f172a">docs/superpowers/plans/YYYY-MM-DD-&lt;feature&gt;.md</tspan></text>
+
+  <line x1="550" y1="399" x2="550" y2="423" stroke="#0f172a" stroke-width="2" marker-end="url(#arrowDark)"/>
+
+  <!-- ============ GATE 1: PLAN REVIEW (cross-model) ============ -->
+  <rect x="180" y="428" width="740" height="118" rx="12" fill="#fef3c7" stroke="#d97706" stroke-width="2"/>
+  <text x="200" y="454" font-size="10" font-weight="700" fill="#92400e" letter-spacing="2">CHECKPOINT  ·  PLAN REVIEW (BEFORE CODE)</text>
+  <text x="200" y="476" font-size="14" font-weight="700" fill="#451a03">cross-model review of the plan document</text>
+  <!-- Two reviewer chips -->
+  <rect x="200" y="488" width="320" height="42" rx="8" fill="#ffffff" stroke="#fbbf24" stroke-width="1"/>
+  <text x="216" y="506" font-size="12" font-weight="700" fill="#0f172a">Claude</text>
+  <text x="265" y="506" font-size="12" fill="#475569">— agent: <tspan font-family="ui-monospace, monospace" font-weight="600" fill="#0f172a">plan-reviewer</tspan> (sonnet)</text>
+  <text x="216" y="522" font-size="11" fill="#64748b">scope · sequencing · risk · test plan · ambiguity</text>
+
+  <rect x="540" y="488" width="380" height="42" rx="8" fill="#ffffff" stroke="#fbbf24" stroke-width="1"/>
+  <text x="556" y="506" font-size="12" font-weight="700" fill="#0f172a">Gemini</text>
+  <text x="606" y="506" font-size="12" fill="#475569">— <tspan font-family="ui-monospace, monospace" font-weight="600" fill="#0f172a">gemini-review.sh --plan</tspan></text>
+  <text x="556" y="522" font-size="11" fill="#64748b">UX / frontend fit · structural clarity · model-blind-spot coverage</text>
+
+  <text x="550" y="540" text-anchor="middle" font-size="11" fill="#92400e" font-style="italic">runs before any implementation work begins</text>
+
+  <line x1="550" y1="551" x2="550" y2="575" stroke="#0f172a" stroke-width="2" marker-end="url(#arrowDark)"/>
+
+  <!-- ============ PHASE 3: EXECUTE ============ -->
+  <rect x="280" y="580" width="540" height="124" rx="10" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+  <circle cx="304" cy="604" r="14" fill="#0f172a"/>
+  <text x="304" y="609" text-anchor="middle" font-size="13" font-weight="700" fill="#ffffff">3</text>
+  <text x="328" y="604" font-size="14" font-weight="700" fill="#0f172a">Execute</text>
+  <text x="328" y="624" font-size="11" fill="#475569">isolated in a <tspan font-weight="600" fill="#0f172a">worktree branch</tspan> — never commits to master</text>
+  <text x="328" y="642" font-size="11" fill="#475569">skill: <tspan font-weight="600" fill="#0f172a">superpowers:subagent-driven-development</tspan> — fresh subagent per task</text>
+  <!-- per-task triple gate -->
+  <rect x="328" y="652" width="476" height="42" rx="6" fill="#fef9c3" stroke="#facc15" stroke-width="1"/>
+  <text x="340" y="668" font-size="11" font-weight="700" fill="#713f12">PER TASK  ·  three review stages</text>
+  <text x="340" y="685" font-size="11" fill="#713f12">implementer  →  spec-compliance review  →  code-quality review  →  next task</text>
+
+  <line x1="550" y1="709" x2="550" y2="733" stroke="#0f172a" stroke-width="2" marker-end="url(#arrowDark)"/>
+
+  <!-- ============ PHASE 4: PR ============ -->
+  <rect x="280" y="738" width="540" height="76" rx="10" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+  <circle cx="304" cy="762" r="14" fill="#0f172a"/>
+  <text x="304" y="767" text-anchor="middle" font-size="13" font-weight="700" fill="#ffffff">4</text>
+  <text x="328" y="762" font-size="14" font-weight="700" fill="#0f172a">PR</text>
+  <text x="328" y="782" font-size="11" fill="#475569">skill: <tspan font-weight="600" fill="#0f172a">pr-and-review</tspan> — host-agnostic (<tspan font-family="ui-monospace, monospace">gh / tea / glab</tspan>)</text>
+  <text x="328" y="800" font-size="11" fill="#475569"><tspan font-weight="600" fill="#0f172a">dev</tspan> account creates the PR; <tspan font-weight="600" fill="#0f172a">review</tspan> account approves &amp; merges (separation of duty)</text>
+
+  <line x1="550" y1="819" x2="550" y2="843" stroke="#0f172a" stroke-width="2" marker-end="url(#arrowDark)"/>
+
+  <!-- ============ GATE 2: CODE REVIEW (3-way cross-model) ============ -->
+  <rect x="100" y="848" width="900" height="138" rx="12" fill="#fef3c7" stroke="#d97706" stroke-width="2"/>
+  <text x="120" y="874" font-size="10" font-weight="700" fill="#92400e" letter-spacing="2">CHECKPOINT  ·  CODE REVIEW (BEFORE MERGE)</text>
+  <text x="120" y="896" font-size="14" font-weight="700" fill="#451a03">three reviewers dispatched in parallel</text>
+
+  <rect x="120" y="908" width="280" height="58" rx="8" fill="#ffffff" stroke="#fbbf24" stroke-width="1"/>
+  <text x="136" y="926" font-size="12" font-weight="700" fill="#0f172a">Claude — quick pass</text>
+  <text x="136" y="942" font-size="11" fill="#475569">agent: <tspan font-family="ui-monospace, monospace" font-weight="600" fill="#0f172a">code-reviewer</tspan> (sonnet)</text>
+  <text x="136" y="958" font-size="11" fill="#64748b">security basics · style · obvious bugs</text>
+
+  <rect x="410" y="908" width="280" height="58" rx="8" fill="#ffffff" stroke="#fbbf24" stroke-width="1"/>
+  <text x="426" y="926" font-size="12" font-weight="700" fill="#0f172a">Claude — thorough</text>
+  <text x="426" y="942" font-size="11" fill="#475569">agent: <tspan font-family="ui-monospace, monospace" font-weight="600" fill="#0f172a">in-depth-code-reviewer</tspan> (opus)</text>
+  <text x="426" y="958" font-size="11" fill="#64748b">arch · test coverage · operational impact</text>
+
+  <rect x="700" y="908" width="280" height="58" rx="8" fill="#ffffff" stroke="#fbbf24" stroke-width="1"/>
+  <text x="716" y="926" font-size="12" font-weight="700" fill="#0f172a">Gemini — cross-model</text>
+  <text x="716" y="942" font-size="11" fill="#475569"><tspan font-family="ui-monospace, monospace" font-weight="600" fill="#0f172a">gemini-review.sh</tspan></text>
+  <text x="716" y="958" font-size="11" fill="#64748b">covers single-model blind spots</text>
+
+  <text x="550" y="980" text-anchor="middle" font-size="11" fill="#92400e" font-style="italic">verdict: BLOCK · WARN · PASS  →  any BLOCK halts the merge</text>
+
+  <line x1="550" y1="991" x2="550" y2="1015" stroke="#0f172a" stroke-width="2" marker-end="url(#arrowDark)"/>
+
+  <!-- ============ PHASE 5: MERGE & CLOSE ============ -->
+  <rect x="280" y="1020" width="540" height="96" rx="10" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+  <circle cx="304" cy="1044" r="14" fill="#0f172a"/>
+  <text x="304" y="1049" text-anchor="middle" font-size="13" font-weight="700" fill="#ffffff">5</text>
+  <text x="328" y="1044" font-size="14" font-weight="700" fill="#0f172a">Merge &amp; close</text>
+  <text x="328" y="1064" font-size="11" fill="#475569">rebase if behind, re-approve after force-push (force-push invalidates approvals)</text>
+  <text x="328" y="1082" font-size="11" fill="#475569">skill: <tspan font-weight="600" fill="#0f172a">session-completion</tspan> — light tidy, push, retrospective</text>
+  <text x="328" y="1100" font-size="11" fill="#475569">→ <tspan font-weight="600" fill="#0f172a">memory updated</tspan> when something took more than one attempt</text>
+
+  <!-- ============ PERSISTENT STATE (bottom rail) ============ -->
+  <rect x="40" y="1140" width="1020" height="68" rx="10" fill="#fdf4ff" stroke="#d8b4fe" stroke-width="1.5"/>
+  <text x="60" y="1162" font-size="10" font-weight="700" fill="#86198f" letter-spacing="2">PERSISTENT  ·  CARRIES ACROSS SESSIONS</text>
+  <text x="60" y="1184" font-size="13" fill="#3b0764"><tspan font-family="ui-monospace, monospace" font-weight="700">tasks.jsonl</tspan> — read on session-start, written on session-completion</text>
+  <text x="60" y="1200" font-size="13" fill="#3b0764"><tspan font-family="ui-monospace, monospace" font-weight="700">failure-patterns.md</tspan> — pattern-match before repeating · <tspan font-family="ui-monospace, monospace" font-weight="700">DEVSTUFF.md</tspan> + auto-memory — durable lessons</text>
+
+  <text x="550" y="1230" text-anchor="middle" font-size="10" fill="#94a3b8" letter-spacing="1">github.com/ijiti/ohmybootstrap</text>
+</svg>
