@@ -100,13 +100,14 @@ See `failure-patterns.md` — pattern-match against these before repeating a kno
 
 ## Related documents
 
+- `reference/workflow.md` — full lifecycle map (start here)
 - `reference/directive-groups.md` — how S/W/C/X priorities + conflict resolution work
 - `reference/memory-system.md` — typed entries, topic files
 - `reference/subagent-dispatch.md` — when/how/max_turns
 - `reference/worktrees-and-parallelism.md` — safe parallel agent work
 - `reference/verification-discipline.md` — verify before done
 - `reference/command-tiers.md` — action tier pattern
-- `reference/brainstorm-plan-execute.md` — spec-before-code workflow
+- `reference/brainstorm-plan-execute.md` — phases 1–3 detail
 - `~/.claude/agents/` — installed agent roster (or wherever the APPLY agent installed them)
 - `.claude/skills/` — installed skill catalog (project-local, or wherever the APPLY agent installed them)
 - `~/.claude/projects/<slug>/memory/MEMORY.md` — working-notes index

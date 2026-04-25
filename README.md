@@ -4,9 +4,11 @@ An opinionated Claude Code setup kit distilled from a mature private monorepo's 
 
 ## How it works
 
-![ohmybootstrap architecture — kit, installed, live session](docs/architecture.svg)
+![ohmybootstrap workflow — five phases with two cross-model review checkpoints](docs/architecture.svg)
 
-Three stages: ① you clone the kit; ② an `APPLY.md`-driven agent installs files into your project root and `~/.claude/`, with approval at every write; ③ a Claude session in your project auto-loads the directives + memory and invokes the kit's skills/agents on demand.
+A non-trivial change moves through five phases — Design → Plan → Execute → PR → Merge & close — with **two cross-model review checkpoints** between them: plan review before code, and a three-way (Claude quick + Claude thorough + Gemini) code review before merge. An always-on operating contract (ranked S/W/C/X directives) shapes decisions at every phase, and three persistent artifacts (`tasks.jsonl`, `failure-patterns.md`, auto-memory) carry context across sessions.
+
+Textual companion for agents: [`reference/workflow.md`](reference/workflow.md).
 
 ## Usage
 
@@ -43,6 +45,7 @@ claude/
   skills/                         ← 4 skill definitions
   failure-patterns.md             ← lessons catalog
 reference/                        ← conceptual docs the APPLY agent links into your CLAUDE.md
+  workflow.md                     ← full lifecycle map (start here)
   directive-groups.md
   memory-system.md
   subagent-dispatch.md

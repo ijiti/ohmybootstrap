@@ -78,11 +78,10 @@ See `failure-patterns.md`.
 
 ## Related documents
 
+- `reference/workflow.md`
 - `reference/directive-groups.md`
 - `reference/memory-system.md`
 - `reference/subagent-dispatch.md`
-- `reference/worktrees-and-parallelism.md`
 - `reference/verification-discipline.md`
-- `reference/brainstorm-plan-execute.md`
 - `~/.claude/agents/` — installed agent roster (or wherever the APPLY agent installed them)
 - `.claude/skills/` — installed skill catalog (project-local, or wherever the APPLY agent installed them)
