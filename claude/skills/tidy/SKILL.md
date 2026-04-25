@@ -33,7 +33,7 @@ git diff --cached
 
 If both are empty, print "Nothing to tidy — no changes detected." and stop.
 
-**Step 2:** Launch a single agent (type: `code-simplifier:code-simplifier`, max_turns: 15) with this prompt:
+**Step 2:** Launch a single agent (type: `developer`, max_turns: 15) with this prompt:
 
 > You are reviewing a git diff for code health issues. Here is the diff:
 >
@@ -111,7 +111,7 @@ If it doesn't exist, print "Path not found: &lt;target_path&gt;" and stop.
 > - **REUSE** file:line — reimplements <stdlib/shared function>. Recommend: use <function> directly.
 > ```
 
-### Agent 2: Bloat & Dead Code (type: `code-simplifier`, max_turns: 30)
+### Agent 2: Bloat & Dead Code (type: `developer`, max_turns: 30)
 
 > You are auditing `<target_path>` for bloat and dead code.
 >
@@ -140,7 +140,7 @@ If it doesn't exist, print "Path not found: &lt;target_path&gt;" and stop.
 > - **STALE** file — no importers found. Confirm deletion.
 > ```
 
-### Agent 3: Performance & Efficiency (type: `backend-generalist`, max_turns: 25)
+### Agent 3: Performance & Efficiency (type: `developer`, max_turns: 25)
 
 > You are auditing `<target_path>` for performance and efficiency issues.
 >

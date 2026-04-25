@@ -127,7 +127,7 @@ gh pr view <N>
 
 **Gitea:**
 ```bash
-tea pr --repo <owner/repo> <N>
+tea pr --repo <owner/repo> --output plain <N>
 ```
 
 **GitLab:**

@@ -84,5 +84,5 @@ See `failure-patterns.md`.
 - `reference/worktrees-and-parallelism.md`
 - `reference/verification-discipline.md`
 - `reference/brainstorm-plan-execute.md`
-- `claude/agents/` — agent roster
-- `claude/skills/` — skill catalog
+- `~/.claude/agents/` — installed agent roster (or wherever the APPLY agent installed them)
+- `.claude/skills/` — installed skill catalog (project-local, or wherever the APPLY agent installed them)
