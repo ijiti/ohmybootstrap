@@ -2,6 +2,12 @@
 
 An opinionated Claude Code setup kit distilled from a mature private monorepo's agent workflow. Point a Claude Code session at this repo and ask it to adapt your project.
 
+## How it works
+
+![ohmybootstrap architecture — kit, installed, live session](docs/architecture.svg)
+
+Three stages: ① you clone the kit; ② an `APPLY.md`-driven agent installs files into your project root and `~/.claude/`, with approval at every write; ③ a Claude session in your project auto-loads the directives + memory and invokes the kit's skills/agents on demand.
+
 ## Usage
 
 1. Open a Claude Code session in your project.
