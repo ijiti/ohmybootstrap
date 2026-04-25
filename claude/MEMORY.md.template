@@ -1,0 +1,38 @@
+# <FILL IN: Project Slug> Memory
+
+This file auto-loads. Keep it lean. Move project-specific state to topic files. Promote durable lessons into `CLAUDE.md` or skills (where they live forever and don't bloat memory).
+
+## Session Awareness
+
+- <FILL IN: parallel-session notes, worktree conventions for this project, any ongoing state a future session needs to avoid disturbing>
+
+## Universal Workflow
+
+- **Skill enforcement**: `session-start` at session beginning, `session-completion` at end.
+- **`date` before time claims** — don't trust the static `currentDate` field, don't guess weekdays/holidays.
+
+## Git Discipline
+
+- <FILL IN: branch conventions, PR policy, any project-specific git gotchas>
+
+## Auth
+
+- <FILL IN: credential unlock flow, per-tool auth notes>
+
+## Tools & MCP
+
+- <FILL IN: which MCP servers are configured, any pinning or stability notes>
+
+## Repo Structure
+
+- <FILL IN: submodule vs regular-directory quirks, any non-obvious layout>
+
+## Environment Quirks
+
+- <FILL IN: PATH gotchas, tool-version pins, OS-specific gotchas>
+
+## Project Notes (topic files — read on demand)
+
+| File | What it covers |
+|---|---|
+| <FILL IN: e.g., `deployment.md`> | <FILL IN: scope> |
