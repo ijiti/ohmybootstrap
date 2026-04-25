@@ -16,7 +16,7 @@ Goal: a written spec that describes what's being built, why, and what's out of s
 
 - Ask questions one at a time to refine the idea.
 - Propose 2–3 approaches with trade-offs; recommend one.
-- Write the spec to `docs/superpowers/specs/YYYY-MM-DD-<topic>-design.md`.
+- Write the spec to `docs/superpowers/specs/YYYY-MM-DD-<topic>-design.md` (the superpowers plugin's default location) or wherever your project keeps design docs.
 - Self-review the spec: placeholder scan, internal consistency, scope check, ambiguity check.
 - User reviews the written spec before moving to phase 2.
 
@@ -31,7 +31,7 @@ Goal: a step-by-step implementation plan where each step is 2–5 minutes of con
 - No placeholders. "Add appropriate error handling" is a plan failure.
 - Optional but recommended: dispatch `plan-reviewer` (and a cross-model reviewer if available) against the plan before starting implementation. Plan defects are 10× cheaper to fix pre-code.
 
-Save to `docs/superpowers/plans/YYYY-MM-DD-<feature>.md`.
+Save to `docs/superpowers/plans/YYYY-MM-DD-<feature>.md` (the superpowers plugin's default location) or your project's plan-doc directory.
 
 ## Phase 3: Execution
 

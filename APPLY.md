@@ -38,7 +38,7 @@ If no git remote, ask the user how they'd like to handle host-dependent integrat
 
 Read `claude/CLAUDE.md.template`. Resolve each `<FILL IN: ...>` placeholder using what you learned in Step 1. For each non-obvious resolution, show the user your proposed text inline.
 
-If an existing `CLAUDE.md` is present in the target, do not overwrite — show a proposed **merge**: substrate-distilled discipline on top of project-specific content that must be preserved. The user reviews the merge before you write.
+If an existing `CLAUDE.md` is present in the target, do not overwrite — show a proposed **merge**: battle-tested discipline on top of project-specific content that must be preserved. The user reviews the merge before you write.
 
 Wait for approval. Then write `CLAUDE.md` at the target repo root.
 
@@ -91,4 +91,4 @@ Report what you wrote, what you skipped, and what changed. Remind the user:
 - **Never bulk-write.** Each artifact: propose, get approval, write.
 - **Never clobber.** If a file exists, show the user the diff before overwriting.
 - **Prefer the target's conventions.** If the project already has an opinionated directory layout, skill location, or memory organization, adapt rather than impose.
-- **The template is shape, not content.** The specific wording of S1–S4, W1–W5, etc., is substrate-distilled; what S/W/C/X slot into is project-specific. Fill in, don't blindly copy.
+- **The template is shape, not content.** The specific wording of S1–S4, W1–W5, etc., is battle-tested; what S/W/C/X slot into is project-specific. Fill in, don't blindly copy.

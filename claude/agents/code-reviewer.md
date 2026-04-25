@@ -21,7 +21,7 @@ You will receive one of:
 1. **Get the diff.** If given a PR number, fetch it from the appropriate host:
    ```
    # GitHub:  gh pr diff <number>
-   # Gitea:   tea pr --output plain <number>
+   # Gitea:   tea pr --repo <owner/repo> --output plain <number>
    # GitLab:  glab mr diff <number>
    # If given file paths: git diff <paths>
    # If given a raw diff: use it directly.

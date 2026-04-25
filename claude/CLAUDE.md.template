@@ -80,7 +80,7 @@ Universal rules → this file. Directory-specific conventions → nested CLAUDE.
 Auto-memory at `~/.claude/projects/<slug>/memory/`. MEMORY.md auto-loads. Topic files load on demand. Before acting on a recalled fact, verify against current state.
 
 **X4. Plugin hooks live outside `~/.claude/hooks/`.**
-Project-local hooks live in `~/.claude/hooks/*.sh`. Plugin hooks (e.g., superpowers, claude-plugins-official) live in `${CLAUDE_PLUGIN_ROOT}/hooks/`. When a subagent reports "a hook blocked X," check both locations.
+User-global hooks: `~/.claude/hooks/*.sh`. Plugin hooks (e.g., superpowers, claude-plugins-official) live in `${CLAUDE_PLUGIN_ROOT}/hooks/`. Project-local hooks (if your project ships any) typically live in `.claude/hooks/`. When a subagent reports "a hook blocked X," check the relevant location.
 
 ## Conflict resolution
 
@@ -107,6 +107,6 @@ See `failure-patterns.md` — pattern-match against these before repeating a kno
 - `reference/verification-discipline.md` — verify before done
 - `reference/command-tiers.md` — action tier pattern
 - `reference/brainstorm-plan-execute.md` — spec-before-code workflow
-- `claude/agents/` — agent roster
-- `claude/skills/` — skill catalog
+- `~/.claude/agents/` — installed agent roster (or wherever the APPLY agent installed them)
+- `.claude/skills/` — installed skill catalog (project-local, or wherever the APPLY agent installed them)
 - `~/.claude/projects/<slug>/memory/MEMORY.md` — working-notes index

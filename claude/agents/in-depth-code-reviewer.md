@@ -21,7 +21,7 @@ You will receive one of:
 1. **Get the diff and PR context.** If given a PR number, fetch from the appropriate host:
    ```
    # GitHub:  gh pr view <N> && gh pr diff <N>
-   # Gitea:   tea pr --output plain <N>
+   # Gitea:   tea pr --repo <owner/repo> --output plain <N>
    # GitLab:  glab mr view <N> && glab mr diff <N>
    ```
 
@@ -60,7 +60,7 @@ You will receive one of:
 - Logic errors, off-by-one, nil/null handling
 - Error propagation — are errors wrapped with context?
 - Resource lifecycle — open/close, acquire/release, context cancellation
-- Concurrent correctness — races, deadlocks, goroutine leaks
+- Concurrent correctness — races, deadlocks, leaked threads/tasks/goroutines (use the language’s term)
 - Edge cases — empty inputs, max values, unicode, timezone
 
 ### Test Coverage Assessment
