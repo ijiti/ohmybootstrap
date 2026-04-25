@@ -1,251 +1,135 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 1180" font-family="ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 1240" font-family="ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif">
   <defs>
-    <marker id="arrowDark" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+    <marker id="arrowDark" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
       <path d="M 0 0 L 10 5 L 0 10 z" fill="#0f172a"/>
     </marker>
     <marker id="arrowSlate" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
       <path d="M 0 0 L 10 5 L 0 10 z" fill="#94a3b8"/>
     </marker>
-    <!-- Monochrome glyphs to replace color emoji -->
-    <g id="glyphFolder">
-      <path d="M 1 4 L 1 14 L 15 14 L 15 6 L 8 6 L 6 4 Z" fill="none" stroke="#64748b" stroke-width="1.4" stroke-linejoin="round"/>
-    </g>
-    <g id="glyphHome">
-      <path d="M 8 2 L 1 8 L 3 8 L 3 14 L 13 14 L 13 8 L 15 8 Z" fill="none" stroke="#64748b" stroke-width="1.4" stroke-linejoin="round"/>
-    </g>
   </defs>
 
-  <!-- background -->
-  <rect width="1100" height="1180" fill="#ffffff"/>
+  <rect width="1100" height="1240" fill="#ffffff"/>
 
   <!-- ============ TITLE ============ -->
-  <text x="550" y="48" text-anchor="middle" font-size="30" font-weight="600" fill="#0f172a">ohmybootstrap</text>
-  <text x="550" y="76" text-anchor="middle" font-size="15" fill="#64748b">A Claude Code setup kit. Point a session at the repo; the agent installs and tunes it for your project.</text>
+  <text x="550" y="44" text-anchor="middle" font-size="28" font-weight="600" fill="#0f172a">ohmybootstrap workflow</text>
+  <text x="550" y="70" text-anchor="middle" font-size="14" fill="#64748b">Five phases (white) · <tspan font-weight="600" fill="#b45309">two cross-model review checkpoints (amber)</tspan> · persistent state across sessions</text>
 
-  <!-- ============ ZONE 1: THE KIT ============ -->
-  <rect x="60" y="110" width="980" height="200" rx="14" fill="#fafafa" stroke="#cbd5e1" stroke-width="1.5"/>
-  <!-- Numeral anchor -->
-  <circle cx="84" cy="110" r="18" fill="#0f172a"/>
-  <text x="84" y="116" text-anchor="middle" font-size="16" font-weight="700" fill="#ffffff">1</text>
-  <text x="112" y="106" font-size="14" font-weight="700" fill="#0f172a">The kit</text>
-  <text x="112" y="122" font-size="11" fill="#64748b">cloned somewhere on disk</text>
+  <!-- ============ ALWAYS-ON CONSTITUTION (top rail) ============ -->
+  <rect x="40" y="100" width="1020" height="78" rx="10" fill="#0f172a"/>
+  <text x="60" y="124" font-size="10" font-weight="700" fill="#fbbf24" letter-spacing="2">ALWAYS-ON  ·  THE OPERATING CONTRACT</text>
+  <text x="60" y="148" font-size="14" font-weight="600" fill="#ffffff">CLAUDE.md</text>
+  <text x="155" y="148" font-size="13" fill="#cbd5e1">— ranked directives:</text>
+  <text x="290" y="148" font-size="13" font-weight="700" fill="#60a5fa">Security</text>
+  <text x="357" y="148" font-size="13" fill="#94a3b8"> &gt; </text>
+  <text x="378" y="148" font-size="13" font-weight="700" fill="#34d399">Work</text>
+  <text x="425" y="148" font-size="13" fill="#94a3b8"> &gt; </text>
+  <text x="446" y="148" font-size="13" font-weight="700" fill="#fbbf24">Collaboration</text>
+  <text x="558" y="148" font-size="13" fill="#94a3b8"> &gt; </text>
+  <text x="579" y="148" font-size="13" font-weight="700" fill="#f472b6">Context</text>
+  <text x="641" y="148" font-size="13" fill="#cbd5e1">+ a conflict-resolution table</text>
+  <text x="60" y="168" font-size="11" fill="#94a3b8" font-style="italic">verification trumps completion claim  ·  diagnosis trumps retry  ·  security observations can expand scope</text>
 
-  <!-- APPLY.md — protagonist card, slate-900 -->
-  <rect x="84" y="146" width="232" height="148" rx="10" fill="#0f172a"/>
-  <text x="100" y="170" font-size="10" font-weight="600" fill="#94a3b8" letter-spacing="1.5">▶ RUN THIS</text>
-  <text x="100" y="200" font-size="20" font-weight="700" fill="#ffffff">APPLY.md</text>
-  <text x="100" y="222" font-size="12" fill="#cbd5e1">an 11-step recipe a Claude</text>
-  <text x="100" y="238" font-size="12" fill="#cbd5e1">session walks to adapt</text>
-  <text x="100" y="254" font-size="12" fill="#cbd5e1">your project.</text>
-  <rect x="100" y="266" width="200" height="20" rx="10" fill="#1e293b"/>
-  <text x="200" y="280" text-anchor="middle" font-size="10" font-weight="600" fill="#94a3b8" letter-spacing="0.5">APPROVAL AT EVERY WRITE</text>
+  <!-- ============ PHASE 1: DESIGN ============ -->
+  <rect x="280" y="208" width="540" height="76" rx="10" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+  <circle cx="304" cy="232" r="14" fill="#0f172a"/>
+  <text x="304" y="237" text-anchor="middle" font-size="13" font-weight="700" fill="#ffffff">1</text>
+  <text x="328" y="232" font-size="14" font-weight="700" fill="#0f172a">Design</text>
+  <text x="328" y="252" font-size="11" fill="#475569">skill: <tspan font-weight="600" fill="#0f172a">superpowers:brainstorming</tspan> — questions, options, design</text>
+  <text x="328" y="270" font-size="11" fill="#475569">→ spec at <tspan font-family="ui-monospace, monospace" fill="#0f172a">docs/superpowers/specs/YYYY-MM-DD-&lt;topic&gt;-design.md</tspan></text>
 
-  <!-- Right side: 4×2 grid of artifacts (color-coded by lifecycle role) -->
-  <!-- Row 1 -->
-  <g font-size="13">
-    <!-- CLAUDE.md.template (blue, auto-loaded role) -->
-    <rect x="332" y="146" width="172" height="68" rx="8" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1"/>
-    <text x="346" y="166" font-weight="700" fill="#1e3a8a">CLAUDE.md</text>
-    <text x="346" y="182" font-size="11" fill="#475569">.template</text>
-    <text x="346" y="200" font-size="11" fill="#475569">operating contract</text>
+  <line x1="550" y1="289" x2="550" y2="313" stroke="#0f172a" stroke-width="2" marker-end="url(#arrowDark)"/>
 
-    <!-- MEMORY.md.template (blue) -->
-    <rect x="516" y="146" width="172" height="68" rx="8" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1"/>
-    <text x="530" y="166" font-weight="700" fill="#1e3a8a">MEMORY.md</text>
-    <text x="530" y="182" font-size="11" fill="#475569">.template</text>
-    <text x="530" y="200" font-size="11" fill="#475569">auto-memory index seed</text>
+  <!-- ============ PHASE 2: PLAN ============ -->
+  <rect x="280" y="318" width="540" height="76" rx="10" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+  <circle cx="304" cy="342" r="14" fill="#0f172a"/>
+  <text x="304" y="347" text-anchor="middle" font-size="13" font-weight="700" fill="#ffffff">2</text>
+  <text x="328" y="342" font-size="14" font-weight="700" fill="#0f172a">Plan</text>
+  <text x="328" y="362" font-size="11" fill="#475569">skill: <tspan font-weight="600" fill="#0f172a">superpowers:writing-plans</tspan> — task-by-task, TDD-shaped, no placeholders</text>
+  <text x="328" y="380" font-size="11" fill="#475569">→ plan at <tspan font-family="ui-monospace, monospace" fill="#0f172a">docs/superpowers/plans/YYYY-MM-DD-&lt;feature&gt;.md</tspan></text>
 
-    <!-- claude/agents/ (amber, dispatched role) -->
-    <rect x="700" y="146" width="172" height="68" rx="8" fill="#fffbeb" stroke="#fde68a" stroke-width="1"/>
-    <text x="714" y="166" font-weight="700" fill="#78350f">claude/agents/</text>
-    <text x="714" y="184" font-size="11" fill="#475569">developer · devops</text>
-    <text x="714" y="200" font-size="11" fill="#475569">+ 5 reviewers/specialists</text>
+  <line x1="550" y1="399" x2="550" y2="423" stroke="#0f172a" stroke-width="2" marker-end="url(#arrowDark)"/>
 
-    <!-- claude/skills/ (amber, invoked role) -->
-    <rect x="884" y="146" width="148" height="68" rx="8" fill="#fffbeb" stroke="#fde68a" stroke-width="1"/>
-    <text x="898" y="166" font-weight="700" fill="#78350f">claude/skills/</text>
-    <text x="898" y="184" font-size="11" fill="#475569">session-start, -completion,</text>
-    <text x="898" y="200" font-size="11" fill="#475569">pr-and-review, tidy</text>
-  </g>
+  <!-- ============ GATE 1: PLAN REVIEW (cross-model) ============ -->
+  <rect x="180" y="428" width="740" height="118" rx="12" fill="#fef3c7" stroke="#d97706" stroke-width="2"/>
+  <text x="200" y="454" font-size="10" font-weight="700" fill="#92400e" letter-spacing="2">CHECKPOINT  ·  PLAN REVIEW (BEFORE CODE)</text>
+  <text x="200" y="476" font-size="14" font-weight="700" fill="#451a03">cross-model review of the plan document</text>
+  <!-- Two reviewer chips -->
+  <rect x="200" y="488" width="320" height="42" rx="8" fill="#ffffff" stroke="#fbbf24" stroke-width="1"/>
+  <text x="216" y="506" font-size="12" font-weight="700" fill="#0f172a">Claude</text>
+  <text x="265" y="506" font-size="12" fill="#475569">— agent: <tspan font-family="ui-monospace, monospace" font-weight="600" fill="#0f172a">plan-reviewer</tspan> (sonnet)</text>
+  <text x="216" y="522" font-size="11" fill="#64748b">scope · sequencing · risk · test plan · ambiguity</text>
 
-  <!-- Row 2 -->
-  <g font-size="13">
-    <!-- claude/failure-patterns.md (amber, on-demand) -->
-    <rect x="332" y="226" width="172" height="68" rx="8" fill="#fffbeb" stroke="#fde68a" stroke-width="1"/>
-    <text x="346" y="246" font-weight="700" fill="#78350f">failure-patterns</text>
-    <text x="346" y="264" font-size="11" fill="#475569">9 generic war stories</text>
-    <text x="346" y="280" font-size="11" fill="#475569">claude/failure-patterns.md</text>
+  <rect x="540" y="488" width="380" height="42" rx="8" fill="#ffffff" stroke="#fbbf24" stroke-width="1"/>
+  <text x="556" y="506" font-size="12" font-weight="700" fill="#0f172a">Gemini</text>
+  <text x="606" y="506" font-size="12" fill="#475569">— <tspan font-family="ui-monospace, monospace" font-weight="600" fill="#0f172a">gemini-review.sh --plan</tspan></text>
+  <text x="556" y="522" font-size="11" fill="#64748b">UX / frontend fit · structural clarity · model-blind-spot coverage</text>
 
-    <!-- reference/ (amber, on-demand) -->
-    <rect x="516" y="226" width="172" height="68" rx="8" fill="#fffbeb" stroke="#fde68a" stroke-width="1"/>
-    <text x="530" y="246" font-weight="700" fill="#78350f">reference/</text>
-    <text x="530" y="264" font-size="11" fill="#475569">conceptual deep-dives</text>
-    <text x="530" y="280" font-size="11" fill="#475569">linked from CLAUDE.md</text>
+  <text x="550" y="540" text-anchor="middle" font-size="11" fill="#92400e" font-style="italic">runs before any implementation work begins</text>
 
-    <!-- examples/ (neutral, kit-only) -->
-    <rect x="700" y="226" width="172" height="68" rx="8" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
-    <rect x="820" y="278" width="46" height="14" rx="7" fill="#94a3b8"/>
-    <text x="843" y="288" text-anchor="middle" font-size="9" font-weight="600" fill="#ffffff" letter-spacing="0.4">KIT ONLY</text>
-    <text x="714" y="246" font-weight="700" fill="#334155">examples/</text>
-    <text x="714" y="264" font-size="11" fill="#475569">filled-in CLAUDE.md</text>
-    <text x="714" y="280" font-size="11" fill="#475569">for authors</text>
+  <line x1="550" y1="551" x2="550" y2="575" stroke="#0f172a" stroke-width="2" marker-end="url(#arrowDark)"/>
 
-    <!-- README.md (neutral, kit-only) -->
-    <rect x="884" y="226" width="148" height="68" rx="8" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
-    <rect x="978" y="278" width="46" height="14" rx="7" fill="#94a3b8"/>
-    <text x="1001" y="288" text-anchor="middle" font-size="9" font-weight="600" fill="#ffffff" letter-spacing="0.4">KIT ONLY</text>
-    <text x="898" y="246" font-weight="700" fill="#334155">README.md</text>
-    <text x="898" y="264" font-size="11" fill="#475569">human-facing</text>
-    <text x="898" y="280" font-size="11" fill="#475569">overview</text>
-  </g>
+  <!-- ============ PHASE 3: EXECUTE ============ -->
+  <rect x="280" y="580" width="540" height="124" rx="10" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+  <circle cx="304" cy="604" r="14" fill="#0f172a"/>
+  <text x="304" y="609" text-anchor="middle" font-size="13" font-weight="700" fill="#ffffff">3</text>
+  <text x="328" y="604" font-size="14" font-weight="700" fill="#0f172a">Execute</text>
+  <text x="328" y="624" font-size="11" fill="#475569">isolated in a <tspan font-weight="600" fill="#0f172a">worktree branch</tspan> — never commits to master</text>
+  <text x="328" y="642" font-size="11" fill="#475569">skill: <tspan font-weight="600" fill="#0f172a">superpowers:subagent-driven-development</tspan> — fresh subagent per task</text>
+  <!-- per-task triple gate -->
+  <rect x="328" y="652" width="476" height="42" rx="6" fill="#fef9c3" stroke="#facc15" stroke-width="1"/>
+  <text x="340" y="668" font-size="11" font-weight="700" fill="#713f12">PER TASK  ·  three review stages</text>
+  <text x="340" y="685" font-size="11" fill="#713f12">implementer  →  spec-compliance review  →  code-quality review  →  next task</text>
 
-  <!-- Connector — slate-100 ribbon, lighter than zone titles -->
-  <line x1="550" y1="320" x2="550" y2="368" stroke="#94a3b8" stroke-width="2" marker-end="url(#arrowSlate)"/>
-  <rect x="395" y="328" width="310" height="26" rx="13" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1"/>
-  <text x="550" y="346" text-anchor="middle" font-size="12" fill="#334155">APPLY.md walks 11 steps  &#183;  approval at every write</text>
+  <line x1="550" y1="709" x2="550" y2="733" stroke="#0f172a" stroke-width="2" marker-end="url(#arrowDark)"/>
 
-  <!-- ============ ZONE 2: INSTALLED ============ -->
-  <rect x="60" y="380" width="980" height="280" rx="14" fill="#fafafa" stroke="#cbd5e1" stroke-width="1.5"/>
-  <circle cx="84" cy="380" r="18" fill="#0f172a"/>
-  <text x="84" y="386" text-anchor="middle" font-size="16" font-weight="700" fill="#ffffff">2</text>
-  <text x="112" y="376" font-size="14" font-weight="700" fill="#0f172a">Installed</text>
-  <text x="112" y="392" font-size="11" fill="#64748b">what's on disk after APPLY runs</text>
+  <!-- ============ PHASE 4: PR ============ -->
+  <rect x="280" y="738" width="540" height="76" rx="10" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+  <circle cx="304" cy="762" r="14" fill="#0f172a"/>
+  <text x="304" y="767" text-anchor="middle" font-size="13" font-weight="700" fill="#ffffff">4</text>
+  <text x="328" y="762" font-size="14" font-weight="700" fill="#0f172a">PR</text>
+  <text x="328" y="782" font-size="11" fill="#475569">skill: <tspan font-weight="600" fill="#0f172a">pr-and-review</tspan> — host-agnostic (<tspan font-family="ui-monospace, monospace">gh / tea / glab</tspan>)</text>
+  <text x="328" y="800" font-size="11" fill="#475569"><tspan font-weight="600" fill="#0f172a">dev</tspan> account creates the PR; <tspan font-weight="600" fill="#0f172a">review</tspan> account approves &amp; merges (separation of duty)</text>
 
-  <!-- Project root column -->
-  <rect x="84" y="420" width="464" height="220" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
-  <use href="#glyphFolder" x="100" y="430"/>
-  <text x="124" y="442" font-size="13" font-weight="700" fill="#0f172a">your project root</text>
-  <text x="280" y="442" font-size="11" fill="#64748b">— shared with collaborators (committed)</text>
+  <line x1="550" y1="819" x2="550" y2="843" stroke="#0f172a" stroke-width="2" marker-end="url(#arrowDark)"/>
 
-  <g font-size="13" fill="#0f172a">
-    <!-- CLAUDE.md (blue) -->
-    <rect x="100" y="456" width="432" height="38" rx="6" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1"/>
-    <text x="112" y="474" font-weight="700" fill="#1e3a8a">CLAUDE.md</text>
-    <rect x="436" y="462" width="84" height="20" rx="10" fill="#1e40af"/>
-    <text x="478" y="476" text-anchor="middle" font-size="10" font-weight="600" fill="#dbeafe" letter-spacing="0.5">AUTO-LOADED</text>
-    <text x="112" y="488" font-size="11" fill="#475569">operating contract for the project</text>
+  <!-- ============ GATE 2: CODE REVIEW (3-way cross-model) ============ -->
+  <rect x="100" y="848" width="900" height="138" rx="12" fill="#fef3c7" stroke="#d97706" stroke-width="2"/>
+  <text x="120" y="874" font-size="10" font-weight="700" fill="#92400e" letter-spacing="2">CHECKPOINT  ·  CODE REVIEW (BEFORE MERGE)</text>
+  <text x="120" y="896" font-size="14" font-weight="700" fill="#451a03">three reviewers dispatched in parallel</text>
 
-    <!-- failure-patterns.md (amber) -->
-    <rect x="100" y="502" width="432" height="28" rx="6" fill="#fffbeb" stroke="#fde68a" stroke-width="1"/>
-    <text x="112" y="521" font-weight="700" fill="#78350f">failure-patterns.md</text>
+  <rect x="120" y="908" width="280" height="58" rx="8" fill="#ffffff" stroke="#fbbf24" stroke-width="1"/>
+  <text x="136" y="926" font-size="12" font-weight="700" fill="#0f172a">Claude — quick pass</text>
+  <text x="136" y="942" font-size="11" fill="#475569">agent: <tspan font-family="ui-monospace, monospace" font-weight="600" fill="#0f172a">code-reviewer</tspan> (sonnet)</text>
+  <text x="136" y="958" font-size="11" fill="#64748b">security basics · style · obvious bugs</text>
 
-    <!-- reference/ (amber) -->
-    <rect x="100" y="538" width="432" height="28" rx="6" fill="#fffbeb" stroke="#fde68a" stroke-width="1"/>
-    <text x="112" y="557" font-weight="700" fill="#78350f">reference/</text>
-    <rect x="180" y="546" width="24" height="14" rx="7" fill="#fbbf24"/>
-    <text x="192" y="557" text-anchor="middle" font-size="10" font-weight="700" fill="#78350f">7</text>
-    <text x="218" y="557" font-size="11" fill="#475569">conceptual docs</text>
+  <rect x="410" y="908" width="280" height="58" rx="8" fill="#ffffff" stroke="#fbbf24" stroke-width="1"/>
+  <text x="426" y="926" font-size="12" font-weight="700" fill="#0f172a">Claude — thorough</text>
+  <text x="426" y="942" font-size="11" fill="#475569">agent: <tspan font-family="ui-monospace, monospace" font-weight="600" fill="#0f172a">in-depth-code-reviewer</tspan> (opus)</text>
+  <text x="426" y="958" font-size="11" fill="#64748b">arch · test coverage · operational impact</text>
 
-    <!-- .claude/skills/ (amber) -->
-    <rect x="100" y="574" width="432" height="28" rx="6" fill="#fffbeb" stroke="#fde68a" stroke-width="1"/>
-    <text x="112" y="593" font-weight="700" fill="#78350f">.claude/skills/</text>
-    <rect x="206" y="582" width="24" height="14" rx="7" fill="#fbbf24"/>
-    <text x="218" y="593" text-anchor="middle" font-size="10" font-weight="700" fill="#78350f">4</text>
+  <rect x="700" y="908" width="280" height="58" rx="8" fill="#ffffff" stroke="#fbbf24" stroke-width="1"/>
+  <text x="716" y="926" font-size="12" font-weight="700" fill="#0f172a">Gemini — cross-model</text>
+  <text x="716" y="942" font-size="11" fill="#475569"><tspan font-family="ui-monospace, monospace" font-weight="600" fill="#0f172a">gemini-review.sh</tspan></text>
+  <text x="716" y="958" font-size="11" fill="#64748b">covers single-model blind spots</text>
 
-    <!-- tasks.jsonl (pink) + .claude/settings.json (neutral) — paired so right column ends at the same y -->
-    <rect x="100" y="610" width="210" height="22" rx="6" fill="#fdf2f8" stroke="#fbcfe8" stroke-width="1"/>
-    <text x="112" y="626" font-weight="700" fill="#831843">tasks.jsonl</text>
+  <text x="550" y="980" text-anchor="middle" font-size="11" fill="#92400e" font-style="italic">verdict: BLOCK · WARN · PASS  →  any BLOCK halts the merge</text>
 
-    <rect x="322" y="610" width="210" height="22" rx="6" fill="#fffbeb" stroke="#fde68a" stroke-width="1"/>
-    <text x="334" y="626" font-size="12" font-weight="600" fill="#78350f">.claude/settings.json</text>
-    <text x="525" y="626" font-size="9" fill="#92400e" text-anchor="end" font-style="italic">hooks</text>
-  </g>
+  <line x1="550" y1="991" x2="550" y2="1015" stroke="#0f172a" stroke-width="2" marker-end="url(#arrowDark)"/>
 
-  <!-- ~/.claude/ column -->
-  <rect x="560" y="420" width="464" height="220" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
-  <use href="#glyphHome" x="576" y="430"/>
-  <text x="600" y="442" font-size="13" font-weight="700" fill="#0f172a">~/.claude/</text>
-  <text x="676" y="442" font-size="11" fill="#64748b">— your toolbox (every project, not committed)</text>
+  <!-- ============ PHASE 5: MERGE & CLOSE ============ -->
+  <rect x="280" y="1020" width="540" height="96" rx="10" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+  <circle cx="304" cy="1044" r="14" fill="#0f172a"/>
+  <text x="304" y="1049" text-anchor="middle" font-size="13" font-weight="700" fill="#ffffff">5</text>
+  <text x="328" y="1044" font-size="14" font-weight="700" fill="#0f172a">Merge &amp; close</text>
+  <text x="328" y="1064" font-size="11" fill="#475569">rebase if behind, re-approve after force-push (force-push invalidates approvals)</text>
+  <text x="328" y="1082" font-size="11" fill="#475569">skill: <tspan font-weight="600" fill="#0f172a">session-completion</tspan> — light tidy, push, retrospective</text>
+  <text x="328" y="1100" font-size="11" fill="#475569">→ <tspan font-weight="600" fill="#0f172a">memory updated</tspan> when something took more than one attempt</text>
 
-  <g font-size="13" fill="#0f172a">
-    <!-- agents/ (amber) -->
-    <rect x="576" y="456" width="432" height="80" rx="6" fill="#fffbeb" stroke="#fde68a" stroke-width="1"/>
-    <text x="588" y="476" font-weight="700" fill="#78350f">agents/</text>
-    <rect x="652" y="463" width="24" height="16" rx="8" fill="#fbbf24"/>
-    <text x="664" y="475" text-anchor="middle" font-size="10" font-weight="700" fill="#78350f">7</text>
-    <text x="588" y="494" font-size="11" fill="#475569">developer  &#183;  frontend-craftsman  &#183;  devops</text>
-    <text x="588" y="510" font-size="11" fill="#475569">security-auditor  &#183;  code-reviewer</text>
-    <text x="588" y="526" font-size="11" fill="#475569">in-depth-code-reviewer  &#183;  plan-reviewer</text>
+  <!-- ============ PERSISTENT STATE (bottom rail) ============ -->
+  <rect x="40" y="1140" width="1020" height="68" rx="10" fill="#fdf4ff" stroke="#d8b4fe" stroke-width="1.5"/>
+  <text x="60" y="1162" font-size="10" font-weight="700" fill="#86198f" letter-spacing="2">PERSISTENT  ·  CARRIES ACROSS SESSIONS</text>
+  <text x="60" y="1184" font-size="13" fill="#3b0764"><tspan font-family="ui-monospace, monospace" font-weight="700">tasks.jsonl</tspan> — read on session-start, written on session-completion</text>
+  <text x="60" y="1200" font-size="13" fill="#3b0764"><tspan font-family="ui-monospace, monospace" font-weight="700">failure-patterns.md</tspan> — pattern-match before repeating · <tspan font-family="ui-monospace, monospace" font-weight="700">DEVSTUFF.md</tspan> + auto-memory — durable lessons</text>
 
-    <!-- memory/MEMORY.md (blue) -->
-    <rect x="576" y="544" width="432" height="58" rx="6" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1"/>
-    <text x="588" y="564" font-weight="700" fill="#1e3a8a">projects/&lt;slug&gt;/memory/MEMORY.md</text>
-    <rect x="912" y="552" width="84" height="20" rx="10" fill="#1e40af"/>
-    <text x="954" y="566" text-anchor="middle" font-size="10" font-weight="600" fill="#dbeafe" letter-spacing="0.5">AUTO-LOADED</text>
-    <text x="588" y="582" font-size="11" fill="#475569">typed entries: user / feedback / project / reference</text>
-    <text x="588" y="596" font-size="11" fill="#475569">topic files load on demand from the index</text>
-
-  </g>
-
-  <!-- Connector — light, restating zone title -->
-  <line x1="550" y1="670" x2="550" y2="718" stroke="#94a3b8" stroke-width="2" marker-end="url(#arrowSlate)"/>
-  <rect x="395" y="678" width="310" height="26" rx="13" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1"/>
-  <text x="550" y="696" text-anchor="middle" font-size="12" fill="#334155">a Claude session opens in your project</text>
-
-  <!-- ============ ZONE 3: LIVE SESSION ============ -->
-  <rect x="60" y="730" width="980" height="340" rx="14" fill="#f0fdfa" stroke="#5eead4" stroke-width="1.5"/>
-  <circle cx="84" cy="730" r="18" fill="#0f172a"/>
-  <text x="84" y="736" text-anchor="middle" font-size="16" font-weight="700" fill="#ffffff">3</text>
-  <text x="112" y="726" font-size="14" font-weight="700" fill="#0f172a">Live session</text>
-  <text x="112" y="742" font-size="11" fill="#64748b">the main agent steers; the kit pieces serve</text>
-
-  <!-- Auto-loaded inputs — top, blue -->
-  <rect x="120" y="788" width="200" height="48" rx="8" fill="#eff6ff" stroke="#60a5fa" stroke-width="1.2"/>
-  <text x="220" y="809" text-anchor="middle" font-size="13" font-weight="700" fill="#1e3a8a">CLAUDE.md</text>
-  <text x="220" y="825" text-anchor="middle" font-size="10" fill="#1e40af" letter-spacing="0.4">AUTO-LOADED · EVERY TURN</text>
-
-  <rect x="780" y="788" width="200" height="48" rx="8" fill="#eff6ff" stroke="#60a5fa" stroke-width="1.2"/>
-  <text x="880" y="809" text-anchor="middle" font-size="13" font-weight="700" fill="#1e3a8a">MEMORY.md (+ topics)</text>
-  <text x="880" y="825" text-anchor="middle" font-size="10" fill="#1e40af" letter-spacing="0.4">AUTO-LOADED · EVERY TURN</text>
-
-  <!-- Main agent — center -->
-  <ellipse cx="550" cy="900" rx="130" ry="48" fill="#ffffff" stroke="#0f766e" stroke-width="2.5"/>
-  <text x="550" y="896" text-anchor="middle" font-size="16" font-weight="700" fill="#0f172a">Main agent</text>
-  <text x="550" y="916" text-anchor="middle" font-size="12" fill="#475569">steers · decides · dispatches</text>
-
-  <!-- Arrows from auto-loaded inputs to ellipse top — Manhattan routing -->
-  <path d="M 220 836 L 220 870 L 425 870 L 425 894" fill="none" stroke="#60a5fa" stroke-width="2" marker-end="url(#arrowSlate)"/>
-  <path d="M 880 836 L 880 870 L 675 870 L 675 894" fill="none" stroke="#60a5fa" stroke-width="2" marker-end="url(#arrowSlate)"/>
-
-  <!-- On-demand outputs — bottom, amber + pink -->
-  <rect x="100" y="990" width="216" height="58" rx="8" fill="#fffbeb" stroke="#fbbf24" stroke-width="1.2"/>
-  <text x="208" y="1010" text-anchor="middle" font-size="13" font-weight="700" fill="#78350f">.claude/skills/</text>
-  <text x="208" y="1026" text-anchor="middle" font-size="10" fill="#92400e" letter-spacing="0.4">INVOKED · SKILL TOOL</text>
-  <text x="208" y="1040" text-anchor="middle" font-size="10" fill="#92400e">/session-start · /tidy · …</text>
-
-  <rect x="332" y="990" width="216" height="58" rx="8" fill="#fffbeb" stroke="#fbbf24" stroke-width="1.2"/>
-  <text x="440" y="1010" text-anchor="middle" font-size="13" font-weight="700" fill="#78350f">~/.claude/agents/</text>
-  <text x="440" y="1026" text-anchor="middle" font-size="10" fill="#92400e" letter-spacing="0.4">DISPATCHED · TASK TOOL</text>
-  <text x="440" y="1040" text-anchor="middle" font-size="10" fill="#92400e">developer · code-reviewer · …</text>
-
-  <rect x="564" y="990" width="216" height="58" rx="8" fill="#fffbeb" stroke="#fbbf24" stroke-width="1.2"/>
-  <text x="672" y="1010" text-anchor="middle" font-size="13" font-weight="700" fill="#78350f">reference/  &#183;  failure-patterns</text>
-  <text x="672" y="1026" text-anchor="middle" font-size="10" fill="#92400e" letter-spacing="0.4">READ ON DEMAND</text>
-  <text x="672" y="1040" text-anchor="middle" font-size="10" fill="#92400e">when CLAUDE.md links to them</text>
-
-  <rect x="796" y="990" width="184" height="58" rx="8" fill="#fdf2f8" stroke="#f472b6" stroke-width="1.2"/>
-  <text x="888" y="1010" text-anchor="middle" font-size="13" font-weight="700" fill="#831843">tasks.jsonl</text>
-  <text x="888" y="1026" text-anchor="middle" font-size="10" fill="#9d174d" letter-spacing="0.4">↑ READ AT START</text>
-  <text x="888" y="1040" text-anchor="middle" font-size="10" fill="#9d174d" letter-spacing="0.4">↓ WRITTEN AT END</text>
-
-  <!-- Arrows from ellipse to outputs — Manhattan routing, evenly distributed -->
-  <path d="M 460 942 L 460 970 L 208 970 L 208 990" fill="none" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#arrowSlate)"/>
-  <path d="M 500 944 L 500 970 L 440 970 L 440 990" fill="none" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#arrowSlate)"/>
-  <path d="M 600 944 L 600 970 L 672 970 L 672 990" fill="none" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#arrowSlate)"/>
-  <path d="M 640 942 L 640 970 L 888 970 L 888 990" fill="none" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#arrowSlate)"/>
-
-  <!-- ============ LEGEND ============ -->
-  <g transform="translate(60, 1110)">
-    <rect x="0" y="0" width="14" height="14" rx="3" fill="#eff6ff" stroke="#60a5fa"/>
-    <text x="22" y="11" font-size="11" fill="#475569">auto-loaded into context every turn</text>
-
-    <rect x="280" y="0" width="14" height="14" rx="3" fill="#fffbeb" stroke="#fbbf24"/>
-    <text x="302" y="11" font-size="11" fill="#475569">invoked or dispatched on demand</text>
-
-    <rect x="560" y="0" width="14" height="14" rx="3" fill="#fdf2f8" stroke="#f472b6"/>
-    <text x="582" y="11" font-size="11" fill="#475569">read at session start, written at session end</text>
-
-    <rect x="840" y="0" width="14" height="14" rx="3" fill="#f8fafc" stroke="#cbd5e1"/>
-    <text x="862" y="11" font-size="11" fill="#475569">kit-only · never installed</text>
-  </g>
+  <text x="550" y="1230" text-anchor="middle" font-size="10" fill="#94a3b8" letter-spacing="1">github.com/ijiti/ohmybootstrap</text>
 </svg>
