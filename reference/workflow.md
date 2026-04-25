@@ -2,7 +2,7 @@
 
 Textual companion to the architecture diagram. Describes the lifecycle a non-trivial change moves through under this kit: an always-on contract, five phases, two cross-model review checkpoints, and persistent state that crosses sessions.
 
-For trivial work (a typo fix, a one-line config bump), this lifecycle is overkill — skip it. For anything you'd write a spec or a plan for, follow it.
+Trivial work (a typo fix, a one-line config bump) bypasses this lifecycle. The lifecycle applies to changes that would have a spec document or a plan document.
 
 ## Always-on contract
 
@@ -25,14 +25,14 @@ The contract shapes every decision in every phase below. See `directive-groups.m
 
 ## Phase 1 — Design
 
-**Goal:** a written spec describing what's being built, why, and what's out of scope.
+Produces a written spec describing what's being built, why, and what's out of scope.
 
 - Skill: `superpowers:brainstorming` (recommended dependency).
-- Process: ask questions one at a time, propose 2–3 approaches with trade-offs, recommend one.
-- Output: spec at `docs/superpowers/specs/YYYY-MM-DD-<topic>-design.md` (the superpowers plugin's default location) or your project's design-doc directory.
-- Self-review the spec before moving on: placeholder scan, internal consistency, scope check, ambiguity check.
+- Process: questions asked one at a time, 2–3 approaches proposed with trade-offs, one recommended.
+- Output: spec at `docs/superpowers/specs/YYYY-MM-DD-<topic>-design.md` (the superpowers plugin's default location) or the project's design-doc directory.
+- Spec self-review before moving on: placeholder scan, internal consistency, scope check, ambiguity check.
 
-Anti-pattern: "this is too simple to need a design." Even a two-sentence design surfaces assumptions that would otherwise leak into code.
+Even small changes get a brief design — a two-sentence spec surfaces assumptions that would otherwise leak into code.
 
 See `brainstorm-plan-execute.md` for the spec-writing detail.
 
@@ -40,11 +40,11 @@ See `brainstorm-plan-execute.md` for the spec-writing detail.
 
 ## Phase 2 — Plan
 
-**Goal:** a step-by-step implementation plan where each step is 2–5 minutes of concrete work.
+Produces a step-by-step implementation plan where each step is 2–5 minutes of concrete work.
 
 - Skill: `superpowers:writing-plans`.
-- Process: TDD-shaped per task (write failing test, run to verify, implement, run to verify, commit).
-- No placeholders — "add appropriate error handling" is a plan failure. Code blocks include the actual code.
+- Per-task structure: TDD-shaped (failing test, run to verify, implement, run to verify, commit).
+- Plans contain the actual code in code blocks, not placeholders. "Add appropriate error handling" without specifics is treated as a plan defect.
 - Output: plan at `docs/superpowers/plans/YYYY-MM-DD-<feature>.md`.
 
 ---
@@ -58,24 +58,24 @@ See `brainstorm-plan-execute.md` for the spec-writing detail.
 | Claude `plan-reviewer` (sonnet) | Agent dispatch | Scope, sequencing, risk, test plan, ambiguity |
 | Gemini | `gemini-review.sh --plan <path>` | UX / frontend fit, structural clarity, single-model blind spots |
 
-The pattern is concretely: send a single message with two tool calls — Agent tool for the Claude reviewer, Bash tool for the Gemini script — so they run concurrently.
+Dispatch is a single message with two tool calls — Agent tool for the Claude reviewer, Bash tool for the Gemini script — so the two reviewers run concurrently.
 
 The checkpoint runs **before any implementation work begins**. Plan-stage defects (scope creep, missing dependencies, untestable acceptance criteria, sequencing bugs) are addressed against the plan document, not against code.
 
 Verdicts: `BLOCK` halts forward motion; `WARN` is logged and addressed if non-trivial; `PASS` proceeds.
 
-Skip this checkpoint only for trivial chores (a `tasks.jsonl` retire, a 1-line config bump). Anything that has a plan document gets plan-reviewed.
+Trivial chores (a `tasks.jsonl` retire, a 1-line config bump) bypass this checkpoint. Anything with a plan document is plan-reviewed.
 
 ---
 
 ## Phase 3 — Execute
 
-**Goal:** turn the plan into code, one task at a time, with verification gates.
+Turns the plan into code, one task at a time, with verification gates between tasks.
 
-- Worktree-isolated: every session gets its own git worktree on a `work/<slug>` branch. Commits never land on the default branch directly. See `worktrees-and-parallelism.md` for safety patterns and the wrong-branch gotcha.
+- Worktree-isolated: each session gets its own git worktree on a `work/<slug>` branch. Commits do not land on the default branch directly. See `worktrees-and-parallelism.md` for safety patterns and the wrong-branch gotcha.
 - Skill: `superpowers:subagent-driven-development` (recommended) or `superpowers:executing-plans`.
 - Subagent-driven mode: a fresh subagent implements each task; the main session reviews between tasks. Per-task review has three stages — implementer, spec-compliance reviewer, code-quality reviewer — before the task is marked done.
-- During execution: `/tidy` (light mode) sweeps the diff for dead code, duplication, and obvious bloat before commits. See the `tidy` skill for deep-mode usage on a directory target.
+- During execution: `/tidy` (light mode) sweeps the diff for dead code, duplication, and obvious bloat before commits. The `tidy` skill's deep mode targets a specific directory.
 
 Subagent dispatch discipline (max_turns, concrete exemplars, the C3 nested-CLAUDE.md gotcha): see `subagent-dispatch.md`.
 
@@ -83,12 +83,12 @@ Subagent dispatch discipline (max_turns, concrete exemplars, the C3 nested-CLAUD
 
 ## Phase 4 — PR
 
-**Goal:** put the change in front of reviewers via the project's git host.
+Surfaces the change for review on the project's git host.
 
 - Skill: `pr-and-review`.
 - Host-agnostic: detects GitHub (`gh`), Gitea (`tea`), or GitLab (`glab`) from the remote URL and shows equivalent commands for each.
 - Author/approver separation: where the host and policy allow, separate identities create the PR vs. approve and merge it. Reduces self-review risk.
-- The PR description should explain *why*, not restate the diff. Test plan as a checklist.
+- PR description explains *why* the change is being made; the diff already shows *what*. Test plan is a checklist.
 
 ---
 
@@ -102,27 +102,27 @@ Subagent dispatch discipline (max_turns, concrete exemplars, the C3 nested-CLAUD
 | Claude `in-depth-code-reviewer` (opus) | Agent dispatch — thorough | Architecture, test coverage, edge cases, operational impact |
 | Gemini | `gemini-review.sh <PR-number>` | Cross-model coverage of single-model blind spots |
 
-All three are dispatched in a single message (parallel tool calls). Each is told to fetch the diff via the host CLI, not read files locally — local files reflect master, not the PR branch, and produce false positives.
+All three are dispatched in a single message (parallel tool calls). Reviewers fetch the diff via the host CLI rather than reading files locally — local files reflect master, not the PR branch, and produce false positives.
 
 Aggregate verdicts:
-- All `PASS` or `WARN` (no `BLOCK`): approve and merge.
-- Any `BLOCK`: do not merge. Findings posted; implementer fixes; reviewers re-run on the fixed diff.
+- All `PASS` or `WARN` (no `BLOCK`): merge proceeds.
+- Any `BLOCK`: merge is held. Findings posted; implementer addresses them; reviewers re-run on the fixed diff.
 
-If the PR branch is behind base, the host typically blocks the merge: rebase, force-push, **re-approve** (force-push invalidates prior approvals), then merge.
+When the PR branch is behind base, the host typically blocks the merge. Recovery: rebase, force-push, **re-approve** (force-push invalidates prior approvals), then merge.
 
-For details on Gemini review configuration and the `--security`/`--plan` flags, see the `pr-and-review` skill.
+For Gemini review configuration and the `--security`/`--plan` flags, see the `pr-and-review` skill.
 
 ---
 
 ## Phase 5 — Merge & close
 
-**Goal:** land the change cleanly and update persistent state.
+Lands the change and updates persistent state.
 
 - Skill: `session-completion`.
-- Order: light tidy → commit any remaining state → push → PR review (if not already done) → merge → retrospective.
-- **Tasks export:** open tasks written back to `tasks.jsonl` at repo root. The next session reads this on `session-start`.
-- **Memory update:** when something during the session took more than one attempt, the lesson is recorded — either in the user's auto-memory (`~/.claude/projects/<slug>/memory/`) or, if the lesson is project-specific and a human teammate would benefit, in `DEVSTUFF.md` / equivalent.
-- **failure-patterns.md update:** if the lesson is generalizable (will recur in future sessions on this or other projects), it goes in the kit's `failure-patterns.md` catalog.
+- Order: light tidy → commit remaining state → push → PR review (if not already complete) → merge → retrospective.
+- **Tasks export:** open tasks are written to `tasks.jsonl` at repo root. The next session reads this on `session-start`.
+- **Memory update:** when something during the session took more than one attempt, the lesson is recorded — in auto-memory (`~/.claude/projects/<slug>/memory/`) for agent-global preferences, or in `DEVSTUFF.md` / equivalent for project-specific knowledge a human teammate benefits from.
+- **failure-patterns.md update:** generalizable lessons that will recur across future sessions go into the kit's `failure-patterns.md` catalog.
 
 ---
 
@@ -140,11 +140,11 @@ See `memory-system.md` for the typed-entry structure and rules about what to sav
 
 ---
 
-## When to skip the workflow
+## When the lifecycle does not apply
 
-Trivial work — a typo, a comment fix, a one-character config change — does not benefit from this lifecycle. Use judgment: if the work involves non-obvious decisions, the workflow pays for itself.
+Trivial work — a typo, a comment fix, a one-character config change — bypasses this lifecycle. Boundary heuristic: if the change involves non-obvious decisions, it is in scope.
 
-The lifecycle exists because plan-stage defects are cheaper to fix pre-code than post-code, and code-stage defects are cheaper to fix pre-merge than post-merge. Both checkpoints exist to catch defects at the cheapest stage.
+Both checkpoints are positioned to catch defects at the cheapest stage. Plan-stage defects are addressed against the plan document; code-stage defects against the diff. Catching either after merge is more expensive than catching either before merge.
 
 ---
 
